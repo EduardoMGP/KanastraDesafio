@@ -111,11 +111,12 @@ class InvoicesController extends Controller
                         'governmentId' => 'required|integer',
                         'email'        => 'required|email',
                         'debtAmount'   => 'required|numeric|between:0,9999999999.99',
-                        'debtDueDate'  => 'required|date',
+                        'debtDueDate'  => 'required|date_format:Y-m-d',
                         'debtId'       => 'required|integer|between:0,9999999999',
                     ], [
                         '*.required' => __('api.required', ['attribute' => ':attribute']),
                         '*.date'     => __('api.date', ['attribute' => ':attribute']),
+                        '*.date_format' => __('api.date', ['attribute' => ':attribute']),
                         '*.integer'  => __('api.integer', ['attribute' => ':attribute']),
                         '*.numeric'  => __('api.numeric', ['attribute' => ':attribute']),
                         '*.between' => __('api.between', ['attribute' => ':attribute', 'min' => ':min', 'max' => ':max']),
