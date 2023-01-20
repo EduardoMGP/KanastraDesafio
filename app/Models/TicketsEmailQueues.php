@@ -31,12 +31,4 @@ class TicketsEmailQueues extends Model
         'debtId',
         'status',
     ];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function invoice()
-    {
-        return $this->belongsTo(Invoices::class, 'debtId', 'debtId');
-    }
 }

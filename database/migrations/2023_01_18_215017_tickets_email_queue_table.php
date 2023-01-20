@@ -18,13 +18,10 @@ return new class extends Migration
             $table->id();
             $table->string('email');
             $table->string('ticket_barcode')->nullable(true);
-            $table->integer('debtId')->unique();
+            $table->integer('debtId');
             $table->enum('status', ['pending', 'sent', 'failed'])->default('pending');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-
-            $table->foreign('debtId')->references('debtId')->on('invoices')->onDelete('cascade');
-
         });
     }
 
