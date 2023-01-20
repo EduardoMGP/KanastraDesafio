@@ -74,11 +74,11 @@ class InvoicesController extends Controller
         $file = $request->file('csv');
         $content = file_get_contents($file->getRealPath());
         $newContent = '';
-        $contents = explode(PHP_EOL, $content);
+        $contents = explode("\n", $content);
         for ($i = 0; $i < count($contents); $i++) {
             $newContent .= preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $contents[$i]);
             if ($i < count($contents) - 1) {
-                $newContent .= PHP_EOL;
+                $newContent .= "\n";
             }
         }
         return $this->createInvoice($newContent);
