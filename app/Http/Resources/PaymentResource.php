@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use App\Traits\GenericResourceTrait;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class InvoiceResource extends JsonResource
+class PaymentResource extends JsonResource
 {
 
     use GenericResourceTrait;

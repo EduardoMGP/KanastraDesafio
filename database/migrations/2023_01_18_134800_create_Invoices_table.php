@@ -21,6 +21,7 @@ return new class extends Migration
             $table->bigInteger('governmentId');
             $table->decimal('debtAmount', 12, 2);
             $table->date('debtDueDate');
+            $table->boolean('paid')->default(false);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

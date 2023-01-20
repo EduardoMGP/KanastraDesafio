@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::get('/pagamentos', [\App\Http\Controllers\DashboardController::class, 'payments'])->name('pagamentos');
+Route::get('/emails', [\App\Http\Controllers\DashboardController::class, 'emailsQueue'])->name('emails-queue');
+Route::get('/faturas', [\App\Http\Controllers\DashboardController::class, 'invoices'])->name('faturas');

@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controllers\Middleware;
 
-class ContentType extends Middleware
+class ContentType
 {
     /**
      * Handle an incoming request.
