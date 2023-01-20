@@ -140,16 +140,15 @@
 </a>
 
 <script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{url('vendor/chart.js/Chart.min.js')}}"></script>
 <script src="{{url('vendor/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{url('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{url('js/demo/chart-area-demo.js')}}"></script>
 <script src="{{url('js/demo/datatables-demo.js')}}"></script>
 <script src="{{url('js/sb-admin-2.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
 <script src="{{url('js/script.js')}}"></script>
 
+@yield('scripts')
 </body>
 
 </html>

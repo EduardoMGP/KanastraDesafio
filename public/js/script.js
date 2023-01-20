@@ -57,9 +57,25 @@ $("#invoice-form").submit(function (event) {
                 title: 'OK',
                 message: data.message,
             });
+
+            var dataTable = $('#dataTable2').DataTable();
+            data = data.data.created;
+            for (var i = 0; i < data.length; i++) {
+                dataTable.row.add([
+                    data[i].debtId,
+                    data[i].name,
+                    data[i].governmentId,
+                    data[i].email,
+                    data[i].debtAmountFormat,
+                    data[i].debtDueDateFormat,
+                    "<span class='badge badge-warning'>Pendente</span>",
+                    data[i].valuePaidFormat,
+                ]);
+            }
+
+            dataTable.draw();
         },
         error: function (data, textStatus, errorThrown) {
-            console.log(data);
             let message = data.responseJSON.message;
             iziToast.error({
                 title: 'Error',
@@ -74,7 +90,6 @@ $("#invoice-upload-form").submit(function (event) {
     var fd = new FormData();
     var file = $('#csv')[0].files;
     fd.append('csv', file[0]);
-    console.log(fd);
     $.ajax({
         url : '/api/invoice/upload',
         type : "POST",
@@ -86,9 +101,25 @@ $("#invoice-upload-form").submit(function (event) {
                 title: 'OK',
                 message: data.message,
             });
+
+            var dataTable = $('#dataTable2').DataTable();
+            data = data.data.created;
+            for (var i = 0; i < data.length; i++) {
+                dataTable.row.add([
+                    data[i].debtId,
+                    data[i].name,
+                    data[i].governmentId,
+                    data[i].email,
+                    data[i].debtAmountFormat,
+                    data[i].debtDueDateFormat,
+                    "<span class='badge badge-warning'>Pendente</span>",
+                    data[i].valuePaidFormat,
+                ]);
+            }
+
+            dataTable.draw();
         },
         error: function (data, textStatus, errorThrown) {
-            console.log(data);
             let message = data.responseJSON.message;
             iziToast.error({
                 title: 'Error',

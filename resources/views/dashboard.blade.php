@@ -1,4 +1,7 @@
 @extends('layouts.default', ['title' => 'Dashboard'])
+@section('scripts')
+    <script src="{{url('js/demo/chart-area-demo.js')}}"></script>
+@endsection
 @section('content')
     <div class="row">
 
