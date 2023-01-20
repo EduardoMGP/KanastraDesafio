@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->integer('debtId');
-            $table->date('paidAt');
+            $table->dateTime('paidAt');
             $table->decimal('paidAmount', 12, 2);
             $table->string('paidBy');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

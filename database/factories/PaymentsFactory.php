@@ -20,7 +20,7 @@ class PaymentsFactory extends Factory
     {
         return [
             'debtId'     => $this->faker->randomNumber(),
-            'paidAt'     => $this->faker->date(),
+            'paidAt'     => $this->faker->dateTime()->format('Y-m-d H:i:s'),
             'paidAmount' => $this->faker->randomFloat(2, 0, 1000),
             'paidBy'     => $this->faker->name(),
         ];

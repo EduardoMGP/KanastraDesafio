@@ -28,8 +28,8 @@ class PaymentCreateRequest extends FormRequest
     {
         return [
             'debtId'     => 'required|integer',
-            'paidAt'     => 'required|date',
-            'paidAmount' => 'required|numeric',
+            'paidAt'     => 'required|date_format:Y-m-d H:i:s',
+            'paidAmount' => 'required|numeric|between:0,9999999999.99',
             'paidBy'     => 'required|string',
         ];
     }
@@ -38,8 +38,9 @@ class PaymentCreateRequest extends FormRequest
     {
         return [
             '*.required' => __('api.required', ['attribute' => ':attribute']),
-            '*.date' => __('api.date', ['attribute' => ':attribute']),
+            '*.date_format' => __('api.date', ['attribute' => ':attribute']),
             '*.numeric' => __('api.numeric', ['attribute' => ':attribute']),
+            '*.between' => __('api.between', ['attribute' => ':attribute', 'min' => ':min', 'max' => ':max']),
             '*.string' => __('api.string', ['attribute' => ':attribute']),
             '*.integer' => __('api.integer', ['attribute' => ':attribute']),
         ];

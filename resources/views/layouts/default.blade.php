@@ -54,16 +54,17 @@
         </div>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('pagamentos')}}">
-                <i class="fas fa-solid fa-money-bill-1"></i>
-                <span>Pagamentos</span></a>
-        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="{{route('faturas')}}">
                 <i class="fas fa-solid fa-file-invoice-dollar"></i>
                 <span>Faturas</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('pagamentos')}}">
+                <i class="fas fa-solid fa-money-bill-1"></i>
+                <span>Pagamentos</span></a>
         </li>
 
         <li class="nav-item">
@@ -142,6 +143,7 @@
 <script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{url('vendor/chart.js/Chart.min.js')}}"></script>
 <script src="{{url('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script src="{{url('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{url('js/demo/datatables-demo.js')}}"></script>
 <script src="{{url('js/sb-admin-2.min.js')}}"></script>

@@ -22,6 +22,7 @@ return [
     'email' => 'The :attribute must be a valid email address.',
     'date' => 'The :attribute must be a valid date.',
     'numeric' => 'The :attribute must be a number.',
+    'between' => 'The :attribute must be between :min and :max.',
     'integer' => 'The :attribute must be an integer.',
 
 

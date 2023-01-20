@@ -110,13 +110,15 @@ class InvoicesController extends Controller
                         'name'         => 'required|string',
                         'governmentId' => 'required|integer',
                         'email'        => 'required|email',
-                        'debtAmount'   => 'required|numeric',
+                        'debtAmount'   => 'required|numeric|between:0,9999999999.99',
                         'debtDueDate'  => 'required|date',
-                        'debtId'       => 'required|integer',
+                        'debtId'       => 'required|integer|between:0,9999999999',
                     ], [
                         '*.required' => __('api.required', ['attribute' => ':attribute']),
                         '*.date'     => __('api.date', ['attribute' => ':attribute']),
+                        '*.integer'  => __('api.integer', ['attribute' => ':attribute']),
                         '*.numeric'  => __('api.numeric', ['attribute' => ':attribute']),
+                        '*.between' => __('api.between', ['attribute' => ':attribute', 'min' => ':min', 'max' => ':max']),
                         '*.string'   => __('api.string', ['attribute' => ':attribute']),
                         '*.email'    => __('api.email', ['attribute' => ':attribute']),
                     ]);
@@ -132,6 +134,7 @@ class InvoicesController extends Controller
                     $invoice = Invoices::query()->where('debtId', $row['debtId'])->first();
                     if (!$invoice) {
                         $invoice = Invoices::create($row);
+                        $invoice->debtId = $row['debtId'];
                         $created[] = $invoice;
                         TicketsEmailQueues::query()->create([
                             'email'  => $row['email'],

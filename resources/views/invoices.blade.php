@@ -37,8 +37,8 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="governmentId">GovernmentId</label>
-                    <input class="form-control" name="governmentId" id="governmentId" type="number" required
-                           maxlength="11" minlength="11">
+                    <input class="form-control cpf" name="governmentId" id="governmentId" type="text" required
+                           maxlength="11" minlength="11" placeholder="000.000.000-00">
                 </div>
                 <div class="form-group col-6">
                     <label for="email">Email</label>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="debtAmount">DebtAmount</label>
-                    <input class="form-control" name="debtAmount" id="debtAmount" type="number" required>
+                    <input class="form-control money" name="debtAmount" id="debtAmount" placeholder="0.00" required>
                 </div>
                 <div class="form-group col-6">
                     <label for="debtDueDate">DebtDueDate</label>

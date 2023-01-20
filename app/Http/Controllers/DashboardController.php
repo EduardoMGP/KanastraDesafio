@@ -57,9 +57,13 @@ class DashboardController extends Controller
     {
         $payments = Payments::query()
             ->get();
+        $invoices = Invoices::query()
+            ->where('paid', false)
+            ->get();
 
         return view('payments', [
             'payments' => $payments,
+            'invoices'     => $invoices,
         ]);
     }
 

@@ -14,15 +14,19 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="debtId">DebtId</label>
-                    <input class="form-control" name="debtId" id="debtId" type="number" required>
+                    <select id="debtId" class="form-control" required>
+                        @foreach($invoices as $invoice)
+                            <option value="{{$invoice->debtId}}">{{$invoice->debtId}} - {{$invoice->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group col-6">
                     <label for="paidAt">PaidAt</label>
-                    <input class="form-control" name="paidAt" id="paidAt" type="date" required>
+                    <input class="form-control" name="paidAt" id="paidAt" type="datetime-local" required>
                 </div>
                 <div class="form-group col-6">
                     <label for="paidAmount">PaidAmount</label>
-                    <input class="form-control" name="paidAmount" id="paidAmount" type="number" required>
+                    <input class="form-control money" name="paidAmount" id="paidAmount" placeholder="0.00" required>
                 </div>
                 <div class="col-12">
                     <button class="btn btn-success btn-icon-split">
