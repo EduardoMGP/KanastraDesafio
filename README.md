@@ -1,5 +1,5 @@
 
-Projeto desenvolvido para o desafio da empresa [Kanastra](https://kanastra.com.br).  
+Projeto desenvolvido como desafio.
 O desafio consiste em criar uma aplicação de um sistema de cobrança    
 
 O projeto foi desenvolvido em [Laravel](https://laravel.com/)  
